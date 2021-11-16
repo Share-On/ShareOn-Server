@@ -1,21 +1,23 @@
-module.exports = (sequelize, DataTypes) => {
-    return sequelize.define(
-      "transaction",
+const Sequelize = require("sequelize");
+
+class Transaction extends Sequelize.Model {
+  static init(sequelize) {
+    return super.init(
       {
         transactionId: {
-          type: DataTypes.STRING(20), 
+          type: Sequelize.STRING(20), 
           allowNull: false 
         },
         value: {
-          type: DataTypes.INTEGER,
+          type: Sequelize.INTEGER,
           allowNull: false
         },
         addType: {
-          type: DataTypes.STRING(20),
+          type: Sequelize.STRING(20),
           allowNull: false
         },
         date: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: false
         }
       },
@@ -30,4 +32,11 @@ module.exports = (sequelize, DataTypes) => {
         collate: "utf8_general_ci",
       }
     );
-  };
+  }
+
+  static associate(db) {
+    Transaction.belongsTo(db.User)
+  }
+}
+
+module.exports = Transaction;

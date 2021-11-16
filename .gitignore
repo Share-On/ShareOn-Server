@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/config.json
 node_modules
 dist/*
 *.log
-=======
-config/config.json
->>>>>>> 6c00c2e0313bd3432f660e9707fd16dd7e035d77
+config/*
