@@ -13,7 +13,7 @@ class Transaction extends Sequelize.Model {
           allowNull: false
         },
         addType: {
-          type: Sequelize.STRING(20),
+          type: Sequelize.BOOLEAN,
           allowNull: false
         },
         date: {
