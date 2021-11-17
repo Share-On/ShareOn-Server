@@ -3,3 +3,4 @@ dist/*
 *.log
 config/*
 .env
+.DS_Store

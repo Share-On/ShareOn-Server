@@ -5,10 +5,10 @@ const User = require("./User");
 const db = {};
 
 const sequelize = new Sequelize(
-  config.development.database,
-  config.development.username,
-  config.development.password,
-  config.development
+  config.test.database,
+  config.test.username,
+  config.test.password,
+  config.test
 );
 
 db.sequelize = sequelize;
